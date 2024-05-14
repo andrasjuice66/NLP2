@@ -53,8 +53,10 @@ def train(parser, train_data, dev_data, output_path, batch_size=1024, n_epochs=1
     ###     Cross Entropy Loss: https://pytorch.org/docs/stable/nn.html#crossentropyloss
 
 
-
+    optimizer = torch.optim.Adam(parser.model.parameters())
+    loss_func = torch.nn.CrossEntropyLoss()
     ### END YOUR CODE
+    
 
     for epoch in range(n_epochs):
         print("Epoch {:} out of {:}".format(epoch + 1, n_epochs))
